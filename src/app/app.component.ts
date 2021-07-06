@@ -8,13 +8,13 @@ import { Satellite } from './satellite';
 })
 export class AppComponent {
   title = 'orbit-report';
-  sourceList: object[] = []
+  sourceList: Satellite[] = []
   displayList: Satellite[];
 
   constructor() {
     this.sourceList = [];
     let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
-    let displayList = []
+    this.displayList = [];
  
     window.fetch(satellitesUrl).then(function(response) {
        response.json().then(function(data) {
